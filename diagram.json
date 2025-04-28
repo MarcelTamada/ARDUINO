@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "author": "Marcel Tamada",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": 202.2, "left": 54, "attrs": {} },
+    {
+      "type": "board-ili9341-cap-touch",
+      "id": "lcd1",
+      "top": -152.84,
+      "left": 162.82,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 251.2,
+      "left": 513,
+      "rotate": 180,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 301.55,
+      "left": 537.6,
+      "attrs": { "value": "220000" }
+    }
+  ],
+  "connections": [
+    [ "mega:5V", "lcd1:VCC", "red", [ "v64.5", "h-218.5", "v-288", "h211.2" ] ],
+    [ "lcd1:GND", "mega:GND.1", "black", [ "v48", "h-38.4" ] ],
+    [ "lcd1:MOSI", "mega:51", "blue", [ "v38.4", "h240", "v172.8" ] ],
+    [ "lcd1:SCK", "mega:52", "white", [ "v28.8", "h144", "v200.5" ] ],
+    [ "lcd1:MISO", "mega:50", "green", [ "v0" ] ],
+    [ "lcd1:SCL", "mega:21", "green", [ "v57.6", "h105.6" ] ],
+    [ "lcd1:SDA", "mega:20", "blue", [ "v19.2", "h76.8" ] ],
+    [ "lcd1:LED", "mega:3.3V", "red", [ "v268.8", "h-57.6" ] ],
+    [ "lcd1:CS", "mega:53", "gold", [ "v0" ] ],
+    [ "lcd1:D/C", "mega:48", "green", [ "v0" ] ],
+    [ "mega:GND.2", "r1:1", "black", [ "v64.5", "h299.75" ] ],
+    [ "r1:2", "led1:C", "green", [ "v-67.2", "h-58.4" ] ],
+    [ "led1:A", "mega:25", "green", [ "v0" ] ],
+    [ "lcd1:RST", "mega:49", "cyan", [ "v105.6", "h194.6" ] ]
+  ],
+  "dependencies": {}
+}
